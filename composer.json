@@ -1,0 +1,34 @@
+{
+    "name": "rainsens/asset",
+    "description": "A php website asset package based upon Laravel",
+    "authors": [
+        {
+            "name": "Rainsen",
+            "email": "yusen@rainsen.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rainsens\\Asset\\": "./src"
+        },
+        "files": [
+            "./bootstrap/helpers.php"
+        ]
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Rainsens\\Asset\\Providers\\AssetServiceProvider"
+            ]
+        },
+        "aliases": {
+            "Asset": "Rainsens\\Asset\\Facades\\Asset"
+        }
+    }
+}
