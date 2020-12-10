@@ -47,13 +47,47 @@ class Asset
 		return $this;
 	}
 	
+	protected function isHttpFileExists(string $url)
+	{
+		try {
+			return strlen(file_get_contents($url)) > 0;
+		} catch (\Exception $exception) {
+			return false;
+		}
+	}
+	
+	/**
+	 * <link href="" rel="stylesheet">
+	 *
+	 * @param string $href
+	 * @return string
+	 */
+	protected function getCssLinkTag(string $href)
+	{
+		if (! $this->isHttpFileExists($href)) {
+			return '';
+		}
+		return "<link href='{$href}' rel='stylesheet'>\n";
+	}
+	
+	/**
+	 * <script src=""></script>
+	 *
+	 * @param string $src
+	 * @return string
+	 */
+	protected function getJsScriptTag(string $src)
+	{
+		if (! $this->isHttpFileExists($src)) {
+			return '';
+		}
+		return "<script src='{$src}'></script>\n";
+	}
+	
 	protected function getRequiredCss()
 	{
 		$appCssUrl = _asset_url('app.css');
-		
-		$css = "<link href='{$appCssUrl}' rel='stylesheet'>\n";
-		
-		return $css;
+		return $this->getCssLinkTag($appCssUrl);
 	}
 	
 	public function getCss(array $names = []): string
@@ -61,11 +95,9 @@ class Asset
 		$css = "";
 		foreach ($names as $name) {
 			$url = _asset_pack_url("css/{$name}.css");
-			$css .= "<link href='{$url}' rel='stylesheet'>\n";
+			$css .= $this->getCssLinkTag($url);
 		}
-		
 		$css .= $this->getRequiredCss();
-		
 		return $css;
 	}
 	
@@ -76,11 +108,9 @@ class Asset
 		$css = "";
 		foreach ($files as $file) {
 			$url = _asset_pack_url("css/{$file}.css");
-			$css .= "<link href='{$url}' rel='stylesheet'>\n";
+			$css .= $this->getCssLinkTag($url);
 		}
-		
 		$css .= $this->getRequiredCss();
-		
 		return $css;
 	}
 	
@@ -90,9 +120,9 @@ class Asset
 		$mainJsUrl = _asset_pack_url('js/main.js');
 		$appJsUrl = _asset_url('app.js');
 		
-		$js  = "<script src='{$assetJsUrl}'></script>\n";
-		$js .= "<script src='{$mainJsUrl}'></script>\n";
-		$js .= "<script src='{$appJsUrl}'></script>\n";
+		$js  = $this->getJsScriptTag($assetJsUrl);
+		$js .= $this->getJsScriptTag($mainJsUrl);
+		$js .= $this->getJsScriptTag($appJsUrl);
 		
 		$script = <<<SCRIPT
 
@@ -118,48 +148,41 @@ class Asset
 SCRIPT;
 
 		$js .= $script;
-		
 		return $js;
 	}
 	
 	public function getJs(array $names = []): string
 	{
-		$scripts = '';
+		$script = '';
 		foreach ($names as $name) {
 			$url = _asset_pack_url("js/{$name}.js");
-			$scripts .= "<script src='{$url}'></script>\n";
+			$script .= $this->getJsScriptTag($url);
 		}
-		
-		$scripts .= $this->getRequiredJs();
-		
-		return $scripts;
+		$script .= $this->getRequiredJs();
+		return $script;
 	}
 	
 	public function getJsAll(): string
 	{
 		$files = config('asset.packs')[config('asset.pack')]['js'];;
 		
-		$scripts = "";
+		$script = "";
 		foreach ($files as $file) {
 			if ($file == 'html5shiv' || $file == 'respond.js') {
 				continue;
 			}
 			$url = _asset_pack_url("js/{$file}.js");
-			$scripts .= "<script src='{$url}'></script>\n";
+			$script .= $this->getJsScriptTag($url);
 		}
-		
-		$scripts .= $this->getRequiredJs();
-		
-		return $scripts;
+		$script .= $this->getRequiredJs();
+		return $script;
 	}
 	
 	public function getIeJs(): string
 	{
-		$packUrl = _asset_pack_url();
-		
 		$scripts  = "<!--[if lt IE 9]>\n";
-		$scripts .= "<script src='{$packUrl}/js/html5shiv.js'></script>\n";
-		$scripts .= "<script src='{$packUrl}/js/respond.js'></script>\n";
+		$scripts .= $this->getJsScriptTag(_asset_pack_url("js/html5shiv.js"));
+		$scripts .= $this->getJsScriptTag(_asset_pack_url("js/respond.js"));
 		$scripts .= "<![endif]-->\n";
 		
 		return $scripts;
