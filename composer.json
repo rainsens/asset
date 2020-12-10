@@ -13,10 +13,10 @@
     },
     "autoload": {
         "psr-4": {
-            "Rainsens\\Asset\\": "./src"
+            "Rainsens\\Asset\\": "src"
         },
         "files": [
-            "./bootstrap/helpers.php"
+            "bootstrap/helpers.php"
         ]
     },
     "require-dev": {
