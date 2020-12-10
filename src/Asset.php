@@ -94,10 +94,30 @@ class Asset
 		$js .= "<script src='{$mainJsUrl}'></script>\n";
 		$js .= "<script src='{$appJsUrl}'></script>\n";
 		
-		$js .= <<<JS
+		$script = <<<SCRIPT
 
-JS;
+<script>
+	$(function () {
+		"use strict";
+        Core.init();
+        Asset.init();
+	});
+	
+	function admNotify(style, text) {
+	    new PNotify({
+		    title: 'System Notification',
+		    text: text,
+		    shadow: true,
+		    type: style,
+            width: '25%',
+		    delay: 1500
+	    });
+    }
+</script>
 
+SCRIPT;
+
+		$js .= $script;
 		
 		return $js;
 	}
