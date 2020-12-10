@@ -9,7 +9,8 @@
     ],
     "require": {
         "php": "^7.2",
-        "laravel/framework": "^6.20"
+        "laravel/framework": "^6.20",
+        "orchestra/testbench": "^4.0"
     },
     "autoload": {
         "psr-4": {
@@ -20,7 +21,6 @@
         ]
     },
     "require-dev": {
-        "orchestra/testbench": "^4.0"
     },
     "extra": {
         "laravel": {

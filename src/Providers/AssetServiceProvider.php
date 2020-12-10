@@ -22,11 +22,11 @@ class AssetServiceProvider extends ServiceProvider
 	{
 		$this->publishes([asset_config_path('asset.php') => config_path('asset.php')], 'config');
 		
-		if (! config('asset.directory')) {
+		if (empty(config('asset.directory'))) {
 			config(['asset.directory' => public_path('rainsens')]);
 		}
 		
-		if (! isset(config('asset.packs')[config('asset.pack')])) {
+		if (empty(config('asset.packs')[config('asset.pack')])) {
 			config(['asset.pack' => 'sixth']);
 			config(['asset.packs' => AssetFacade::getPacks()]);
 		}

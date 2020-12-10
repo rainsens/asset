@@ -4,9 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "48445e736fa9f558623d6d416b3e61e0",
-    "packages": [],
-    "packages-dev": [
+    "content-hash": "2302266617ec49698eec4f04e3264fd5",
+    "packages": [
         {
             "name": "doctrine/inflector",
             "version": "2.0.3",
@@ -1261,16 +1260,16 @@
         },
         {
             "name": "orchestra/testbench",
-            "version": "v4.11.0",
+            "version": "v4.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/orchestral/testbench.git",
-                "reference": "1c72fb5db387fd41cdebeb195ea375f5bfe36bb3"
+                "reference": "5ed310089d992179aa5631bcb7453c5338564a11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/orchestral/testbench/zipball/1c72fb5db387fd41cdebeb195ea375f5bfe36bb3",
-                "reference": "1c72fb5db387fd41cdebeb195ea375f5bfe36bb3",
+                "url": "https://api.github.com/repos/orchestral/testbench/zipball/5ed310089d992179aa5631bcb7453c5338564a11",
+                "reference": "5ed310089d992179aa5631bcb7453c5338564a11",
                 "shasum": ""
             },
             "require": {
@@ -1317,7 +1316,7 @@
                     "type": "liberapay"
                 }
             ],
-            "time": "2020-12-01T11:08:56+00:00"
+            "time": "2020-12-09T14:28:50+00:00"
         },
         {
             "name": "orchestra/testbench-core",
@@ -5598,12 +5597,15 @@
             "time": "2020-07-08T17:02:28+00:00"
         }
     ],
+    "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": "^7.2"
+    },
     "platform-dev": [],
     "plugin-api-version": "1.1.0"
 }

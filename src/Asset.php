@@ -47,7 +47,7 @@ class Asset
 		return $this;
 	}
 	
-	protected function isHttpFileExists(string $url)
+	protected function isHttpFileExisting(string $url)
 	{
 		try {
 			return strlen(file_get_contents($url)) > 0;
@@ -64,7 +64,7 @@ class Asset
 	 */
 	protected function getCssLinkTag(string $href)
 	{
-		if (! $this->isHttpFileExists($href)) {
+		if (! $this->isHttpFileExisting($href)) {
 			return '';
 		}
 		return "<link href='{$href}' rel='stylesheet'>\n";
@@ -78,7 +78,7 @@ class Asset
 	 */
 	protected function getJsScriptTag(string $src)
 	{
-		if (! $this->isHttpFileExists($src)) {
+		if (! $this->isHttpFileExisting($src)) {
 			return '';
 		}
 		return "<script src='{$src}'></script>\n";
