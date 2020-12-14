@@ -63,6 +63,13 @@ if (! function_exists('_asset_css_all')) {
 	}
 }
 
+if (! function_exists('_asset_required_css')) {
+	function _asset_required_css(string $pack = '')
+	{
+		return Asset::setPack($pack)->getRequiredCss();
+	}
+}
+
 if (! function_exists('_asset_js')) {
 	/**
 	 * Get the url to js file.
@@ -85,6 +92,13 @@ if (! function_exists('_asset_js_all')) {
 	 */
 	function _asset_js_all(string $pack = '') {
 		return Asset::setPack($pack)->getJsAll();
+	}
+}
+
+if (! function_exists('_asset_required_js')) {
+	function _asset_required_js(string $pack = '')
+	{
+		return Asset::setPack($pack)->getRequiredJs();
 	}
 }
 

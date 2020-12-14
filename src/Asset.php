@@ -85,7 +85,7 @@ class Asset
 		return "<script src='{$src}'></script>\n";
 	}
 	
-	protected function getRequiredCss()
+	public function getRequiredCss()
 	{
 		$appCssUrl = _asset_url('app.css');
 		return $this->getCssLinkTag($appCssUrl);
@@ -115,7 +115,7 @@ class Asset
 		return $css;
 	}
 	
-	protected function getRequiredJs()
+	public function getRequiredJs()
 	{
 		$assetJsUrl = _asset_pack_url('js/asset.js');
 		$mainJsUrl = _asset_pack_url('js/main.js');
