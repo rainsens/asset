@@ -13,7 +13,7 @@
 
 <body>
 
-<div id="app">@yield('main')</div>
+<div id="app">@yield('app')</div>
 
 @stack('script-files')
 @stack('scripts')
