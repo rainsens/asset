@@ -165,7 +165,7 @@ SCRIPT;
 	
 	public function getJsAll(): string
 	{
-		$files = config('asset.packs')[config('asset.pack')]['js'];;
+		$files = config('asset.packs')[config('asset.pack')]['js'];
 		
 		$script = "";
 		foreach ($files as $file) {

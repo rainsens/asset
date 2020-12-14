@@ -26,7 +26,7 @@ class AssetServiceProvider extends ServiceProvider
 	{
 		$this->config();
 		$this->loadViewsFrom(asset_resource_path('views'), 'asset');
-		$this->loadViewComponentsAs('widget', $this->components);
+		$this->loadViewComponentsAs('w', $this->components); // w: widget
 	}
 	
 	protected function config()
