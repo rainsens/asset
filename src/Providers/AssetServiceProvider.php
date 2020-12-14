@@ -3,13 +3,22 @@ namespace Rainsens\Asset\Providers;
 
 use Rainsens\Asset\Asset;
 use Illuminate\Support\ServiceProvider;
+use Rainsens\Asset\Components\Buttons\Button;
+use Rainsens\Asset\Components\Buttons\DropdownButton;
+use Rainsens\Asset\Components\Buttons\GroupButton;
 use Rainsens\Asset\Facades\Asset as AssetFacade;
 
 class AssetServiceProvider extends ServiceProvider
 {
+	protected $components = [
+		Button::class,
+		GroupButton::class,
+		DropdownButton::class,
+	];
+	
 	public function register()
 	{
-		$this->app->bind('asset', function ($app) {return new Asset();});
+		$this->app->bind('asset', function () {return new Asset();});
 		$this->mergeConfigFrom(asset_config_path('asset.php'), 'asset');
 	}
 	
@@ -17,6 +26,7 @@ class AssetServiceProvider extends ServiceProvider
 	{
 		$this->config();
 		$this->loadViewsFrom(asset_resource_path('views'), 'asset');
+		$this->loadViewComponentsAs('widget', $this->components);
 	}
 	
 	protected function config()

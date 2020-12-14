@@ -6,17 +6,15 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name') }}</title>
     {!! _asset_css_all() !!}
-    @stack('css-files')
-    @stack('styles')
     {!! _asset_ie() !!}
+    @stack('styles')
 </head>
 
 <body>
 
-<div id="app">@yield('app')</div>
+<div id="app">@yield('content')</div>
 
-@stack('script-files')
+{!! _asset_js_all() !!}
 @stack('scripts')
-@yield('scripts')
 </body>
 </html>
