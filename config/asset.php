@@ -29,6 +29,8 @@ return [
 				'canvasbg',
 				'utility',
 				'pnotify',
+				'select2',
+				'nestable',
 			]
 		]
 	]

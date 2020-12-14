@@ -43,6 +43,6 @@ class DropdownButton extends Component
 	
 	public function render()
 	{
-		return view('widget::components.buttons.dropdown');
+		return view('asset::components.buttons.dropdown');
 	}
 }

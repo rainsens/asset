@@ -61,6 +61,6 @@ class Button extends Component
 	
 	public function render()
 	{
-		return view('widget::components.buttons.button');
+		return view('asset::components.buttons.button');
 	}
 }

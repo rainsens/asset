@@ -7,6 +7,6 @@ class GroupButton extends Component
 {
 	public function render()
 	{
-		return view('widget::components.buttons.group');
+		return view('asset::components.buttons.group');
 	}
 }
