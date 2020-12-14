@@ -141,6 +141,12 @@ if (! function_exists('asset_config_path')) {
 	}
 }
 
+if (! function_exists('asset_resource_path')) {
+	function asset_resource_path(string $path = '') {
+		return asset_base_path('resources') . ($path ? DIRECTORY_SEPARATOR . $path : $path);
+	}
+}
+
 if (! function_exists('asset_public_path')) {
 	function asset_public_path (string $path = '') {
 		return asset_base_path("public") . ($path ? DIRECTORY_SEPARATOR . $path : $path);

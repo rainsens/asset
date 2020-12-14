@@ -16,6 +16,7 @@ class AssetServiceProvider extends ServiceProvider
 	public function boot()
 	{
 		$this->config();
+		$this->loadViewsFrom(asset_resource_path('views'), 'asset');
 	}
 	
 	protected function config()

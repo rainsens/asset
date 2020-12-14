@@ -1,6 +1,7 @@
 <?php
 namespace Rainsens\Asset;
 
+use Exception;
 use Illuminate\Support\Facades\File;
 
 class Asset
@@ -51,7 +52,7 @@ class Asset
 	{
 		try {
 			return strlen(file_get_contents($url)) > 0;
-		} catch (\Exception $exception) {
+		} catch (Exception $exception) {
 			return false;
 		}
 	}
