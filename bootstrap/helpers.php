@@ -136,7 +136,7 @@ if (! function_exists('_recursive')) {
 				$value['level'] = $level;
 				$orderedData[] = $value;
 				unset($data[$key]);
-				adm_recursive_order($data, $parentField, $value['id'], $level+1);
+				_recursive($data, $parentField, $value['id'], $level+1);
 			}
 		}
 		return $orderedData;

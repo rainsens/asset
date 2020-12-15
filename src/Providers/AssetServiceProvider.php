@@ -6,6 +6,8 @@ use Illuminate\Support\ServiceProvider;
 use Rainsens\Asset\Components\Buttons\Button;
 use Rainsens\Asset\Components\Buttons\DropdownButton;
 use Rainsens\Asset\Components\Buttons\GroupButton;
+use Rainsens\Asset\Components\Nestables\Nestable;
+use Rainsens\Asset\Components\Tables\Table;
 use Rainsens\Asset\Facades\Asset as AssetFacade;
 
 class AssetServiceProvider extends ServiceProvider
@@ -14,6 +16,8 @@ class AssetServiceProvider extends ServiceProvider
 		Button::class,
 		GroupButton::class,
 		DropdownButton::class,
+		Nestable::class,
+		Table::class,
 	];
 	
 	public function register()
