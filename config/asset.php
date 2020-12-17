@@ -25,9 +25,9 @@ return [
 		'sixth' => [
 			'css' => [
 				'nestable',
-				'select2',
 				'ladda',
 				'adminform',
+				'select2',
 				'theme',
 			],
 			
