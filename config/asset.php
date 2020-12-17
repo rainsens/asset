@@ -26,6 +26,7 @@ return [
 			'css' => [
 				'nestable',
 				'select2',
+				'ladda',
 				'adminform',
 				'theme',
 			],
@@ -34,6 +35,7 @@ return [
 				'jquery',
 				'jquery-ui',
 				'canvasbg',
+				'ladda',
 				'utility',
 				'pnotify',
 				'select2',
