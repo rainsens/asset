@@ -20,6 +20,7 @@ return [
 			'css' => [
 				'nestable',
 				'select2',
+				'adminform',
 				'theme',
 			],
 			
