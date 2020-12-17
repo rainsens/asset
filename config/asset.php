@@ -24,11 +24,11 @@ return [
 	'packs' => [
 		'sixth' => [
 			'css' => [
+				'adminform',
+				'theme',
 				'nestable',
 				'ladda',
-				'adminform',
 				'select2',
-				'theme',
 			],
 			
 			'js' => [
@@ -36,10 +36,9 @@ return [
 				'jquery-ui',
 				'canvasbg',
 				'ladda',
-				'utility',
 				'pnotify',
-				'select2',
 				'nestable',
+				'select2',
 			]
 		]
 	]

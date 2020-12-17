@@ -117,11 +117,13 @@ class Asset
 	
 	public function getRequiredJs()
 	{
+		$utilityUrl = _asset_pack_url('js/utility.js');
 		$assetJsUrl = _asset_pack_url('js/asset.js');
-		$mainJsUrl = _asset_pack_url('js/main.js');
-		$appJsUrl = _asset_url('app.js');
+		$mainJsUrl  = _asset_pack_url('js/main.js');
+		$appJsUrl   = _asset_url('app.js');
 		
-		$js  = $this->getJsScriptTag($assetJsUrl);
+		$js  = $this->getJsScriptTag($utilityUrl);
+		$js .= $this->getJsScriptTag($assetJsUrl);
 		$js .= $this->getJsScriptTag($mainJsUrl);
 		$js .= $this->getJsScriptTag($appJsUrl);
 		
