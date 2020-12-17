@@ -2,6 +2,12 @@
 
 return [
 	
+	'title' => 'Rainsens Asset Title',
+	
+	'keywords' => 'Rainsens Asset Keywords',
+	
+	'description' => 'Rainsens Asset Description',
+	
 	/**
 	 * Assets directory under public folder.
 	 */
