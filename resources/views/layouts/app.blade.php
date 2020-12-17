@@ -5,9 +5,7 @@
 
 <div id="app">
     <div id="main">
-        <section id="content_wrapper">
-            @yield('content')
-        </section>
+        @yield('content')
     </div>
 </div>
 
