@@ -47,7 +47,7 @@ if (! function_exists('_asset_css')) {
 	 * @return string
 	 */
 	function _asset_css(array $files = [], string $pack = '') {
-		return Asset::setPack($pack)->getCss($files);
+		return Asset::setThemePack($pack)->getCss($files);
 	}
 }
 
@@ -59,14 +59,14 @@ if (! function_exists('_asset_css_all')) {
 	 * @return string
 	 */
 	function _asset_css_all(string $pack = '') {
-		return Asset::setPack($pack)->getCssAll();
+		return Asset::setThemePack($pack)->getCssAll();
 	}
 }
 
 if (! function_exists('_asset_required_css')) {
 	function _asset_required_css(string $pack = '')
 	{
-		return Asset::setPack($pack)->getRequiredCss();
+		return Asset::setThemePack($pack)->getRequiredCss();
 	}
 }
 
@@ -79,7 +79,7 @@ if (! function_exists('_asset_js')) {
 	 * @return string
 	 */
 	function _asset_js(array $files = [], string $pack = '') {
-		return Asset::setPack($pack)->getJs($files);
+		return Asset::setThemePack($pack)->getJs($files);
 	}
 }
 
@@ -91,14 +91,14 @@ if (! function_exists('_asset_js_all')) {
 	 * @return string
 	 */
 	function _asset_js_all(string $pack = '') {
-		return Asset::setPack($pack)->getJsAll();
+		return Asset::setThemePack($pack)->getJsAll();
 	}
 }
 
 if (! function_exists('_asset_required_js')) {
 	function _asset_required_js(string $pack = '')
 	{
-		return Asset::setPack($pack)->getRequiredJs();
+		return Asset::setThemePack($pack)->getRequiredJs();
 	}
 }
 
@@ -110,7 +110,7 @@ if (! function_exists('_asset_ie')) {
 	 * @return string
 	 */
 	function _asset_ie(string $pack = '') {
-		return Asset::setPack($pack)->getIeJs();
+		return Asset::setThemePack($pack)->getIeJs();
 	}
 }
 
@@ -123,7 +123,7 @@ if (! function_exists('_asset_img')) {
 	 * @return string
 	 */
 	function _asset_img(string $file, string $pack = '') {
-		return Asset::setPack($pack)->getImg($file);
+		return Asset::setThemePack($pack)->getImg($file);
 	}
 }
 

@@ -21,15 +21,15 @@ class Asset
 	}
 	
 	/**
-	 * Set which pack to use.
+	 * Set which theme pack to use.
 	 *
-	 * @param string $pack
+	 * @param string $themePack
 	 * @return Asset
 	 */
-	public function setPack(string $pack = ''): Asset
+	public function setThemePack(string $themePack = ''): Asset
 	{
-		if (isset($this->packs[$pack])) {
-			config(['asset.pack' => $pack]);
+		if (isset($this->packs[$themePack])) {
+			config(['asset.pack' => $themePack]);
 		}
 		return $this;
 	}
