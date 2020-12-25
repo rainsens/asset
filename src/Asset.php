@@ -6,31 +6,7 @@ use Illuminate\Support\Facades\File;
 
 class Asset
 {
-	/**
-	 * Packs available.
-	 *
-	 * @var array
-	 */
-	protected $packs = [
-		'sixth' => [
-			'css' => [
-				'theme',
-				'adminform',
-				'nestable',
-				'ladda',
-				'select2',
-			],
-			'js' => [
-				'jquery',
-				'jquery-ui',
-				'canvasbg',
-				'ladda',
-				'pnotify',
-				'nestable',
-				'select2',
-			]
-		]
-	];
+	use HasThemePacks;
 	
 	public function __construct()
 	{
@@ -44,6 +20,12 @@ class Asset
 		}
 	}
 	
+	/**
+	 * Set which pack to use.
+	 *
+	 * @param string $pack
+	 * @return Asset
+	 */
 	public function setPack(string $pack = ''): Asset
 	{
 		if (isset($this->packs[$pack])) {
@@ -213,10 +195,5 @@ SCRIPT;
 	protected function makeAssetSymlink()
 	{
 		File::link(asset_public_path('rainsens'), _asset_path());
-	}
-	
-	public function getPacks(): array
-	{
-		return $this->packs;
 	}
 }

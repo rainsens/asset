@@ -23,13 +23,21 @@ class AssetServiceProvider extends ServiceProvider
 	{
 		$this->publishes([asset_config_path('asset.php') => config_path('asset.php')], 'config');
 		
+		/**
+		 * If default asset theme directory does not set,
+		 * add it to config of current project.
+		 */
 		if (empty(config('asset.directory'))) {
 			config(['asset.directory' => public_path('rainsens')]);
 		}
 		
+		/**
+		 * If default theme packs does not set,
+		 * add them to config of current project.
+		 */
 		if (empty(config('asset.packs')[config('asset.pack')])) {
 			config(['asset.pack' => 'sixth']);
-			config(['asset.packs' => AssetFacade::getPacks()]);
+			config(['asset.packs' => AssetFacade::getAvailablePacks()]);
 		}
 	}
 }
