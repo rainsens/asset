@@ -25,6 +25,7 @@ trait HasThemePacks
 				'pnotify',
 				'nestable',
 				'select2',
+				'maskedinput',
 			]
 		]
 	];

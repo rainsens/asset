@@ -33,12 +33,13 @@ return [
 			
 			'js' => [
 				'jquery',
-				'jquery-ui',
+				'jqueryui',
 				'canvasbg',
 				'ladda',
 				'pnotify',
 				'nestable',
 				'select2',
+				'maskedinput',
 			]
 		]
 	]
