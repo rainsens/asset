@@ -24,8 +24,8 @@ return [
 	'packs' => [
 		'sixth' => [
 			'css' => [
-				'adminform',
 				'theme',
+				'adminform',
 				'nestable',
 				'ladda',
 				'select2',
