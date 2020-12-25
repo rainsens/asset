@@ -14,16 +14,20 @@ class Asset
 	protected $packs = [
 		'sixth' => [
 			'css' => [
-				'nestable',
-				'select2',
 				'theme',
+				'adminform',
+				'nestable',
+				'ladda',
+				'select2',
 			],
 			'js' => [
 				'jquery',
 				'jquery-ui',
 				'canvasbg',
-				'utility',
+				'ladda',
 				'pnotify',
+				'nestable',
+				'select2',
 			]
 		]
 	];
